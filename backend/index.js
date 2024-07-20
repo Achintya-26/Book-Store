@@ -1,15 +1,16 @@
-import express, { urlencoded } from 'express';
+import express from 'express';
 import {PORT, mongoDBURL} from './config.js'
 import mongoose, { mongo } from 'mongoose';
 import booksRoute from './routes/bookRoutes.js';
 import cors from 'cors';
 
 const app=express();
-app.use(cors({
-    origin:'https://localhost:3000',
-    methods:['GET','POST','DELETE','PUT'],
-    allowedHeaders:['Content-Type']
-}));
+app.use(cors());
+// app.use(cors({
+//     origin:'https://localhost:3000',
+//     methods:['GET','POST','DELETE','PUT'],
+//     allowedHeaders:['Content-Type']
+// }));
 
 // Middleware for parsing JSON
 app.use(express.json());
