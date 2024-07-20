@@ -16,7 +16,7 @@ export default function CreateBook(){
   const handleSaveBook=()=>{
     const data={title,author,publishYear};
     setLoading(true);
-    axios.post('http://localhost:5555/books', data)
+    axios.post('https://book-store-backend-tj88.onrender.com/books', data)
     .then((res)=>{
       setLoading(false);
       enqueueSnackbar('Book created successfully!',{variant:'success'});

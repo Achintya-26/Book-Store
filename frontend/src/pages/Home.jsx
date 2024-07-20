@@ -14,7 +14,7 @@ export default function Home (){
     const [showType, setShowType]=useState('table')
     useEffect(()=>{
         setLoading(true);
-        axios.get('http://localhost:5555/books')
+        axios.get('https://book-store-backend-tj88.onrender.com/books')
         .then((res)=>{
             setBooks(res.data.data);
             setLoading(false);    

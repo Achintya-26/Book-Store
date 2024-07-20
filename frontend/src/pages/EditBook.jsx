@@ -21,7 +21,7 @@ export default function EditBook(){
   
   useEffect(()=>{
     setLoading(true);
-    axios.get(`http://localhost:5555/books/${id}`)
+    axios.get(`https://book-store-backend-tj88.onrender.com/books/${id}`)
     .then((res)=>{
       setAuthor(res.data.author);
       setTitle(res.data.title);
@@ -37,7 +37,7 @@ export default function EditBook(){
   const handleEditBook=()=>{
     const data={title,author,publishYear};
     setLoading(true);
-    axios.put(`http://localhost:5555/books/${id}`, data)
+    axios.put(`https://book-store-backend-tj88.onrender.com/books/${id}`, data)
     .then((res)=>{
       setLoading(false);
       enqueueSnackbar('Book edited successfully!',{variant:'success'});
